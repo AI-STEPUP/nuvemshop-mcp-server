@@ -1,0 +1,23 @@
+# --- Core Server Framework ---
+fastapi
+uvicorn[standard]
+
+# --- MCP SDK ---
+# Biblioteca principal para os componentes de cliente e servidor do MCP
+modelcontextprotocol
+
+# --- LLM Provider ---
+# SDK para comunicação com a API da OpenAI
+openai
+
+# --- HTTP Client ---
+# Para fazer chamadas assíncronas para a API da Tiendanube
+httpx
+
+# --- Configuration ---
+# Para carregar segredos e configurações do arquivo .env
+python-dotenv
+
+# --- CLI Tool (optional) ---
+# Ferramenta de linha de comando para interagir com o MCP
+mcp[cli]

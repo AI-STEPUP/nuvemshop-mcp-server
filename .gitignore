@@ -1,0 +1,6 @@
+# make .gitignore for python projects
+# Git
+
+.env
+__pycache__/
+*.pyc
