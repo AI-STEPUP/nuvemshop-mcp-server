@@ -97,14 +97,15 @@ async def health_check(request: Request) -> Response:
 # Helper function to get config
 def get_config() -> TiendanubeConfig:
     """Get Tiendanube configuration from environment variables"""
-    access_token = "b256f9f43ba59ae9e0981cde795d618a4dbe6232"
-    store_id = "6817991"
-    base_url = "https://api.nuvemshop.com.br/2025-03"
-    user_agent = "nuvemshop-mcp (contato@ee.dev.br)"
+    # LEER DE LAS VARIABLES DE ENTORNO REALES O USAR UN RESPALDO
+    access_token = os.environ.get("TIENDANUBE_ACCESS_TOKEN", "tu_token_de_respaldo_aqui")
+    store_id = os.environ.get("TIENDANUBE_STORE_ID", "tu_id_de_tienda_aqui")
+    base_url = os.environ.get("TIENDANUBE_BASE_URL", "https://api.tiendanube.com/v1")
+    user_agent = os.environ.get("TIENDANUBE_USER_AGENT", "tiendanube-mcp (contacto@tudominio.com)")
 
-    if not access_token:
+    if not access_token or access_token == "tu_token_de_respaldo_aqui":
         raise ValueError("TIENDANUBE_ACCESS_TOKEN environment variable is required")
-    if not store_id:
+    if not store_id or store_id == "tu_id_de_tienda_aqui":
         raise ValueError("TIENDANUBE_STORE_ID environment variable is required")
     
     return TiendanubeConfig(
