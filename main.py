@@ -91,7 +91,7 @@ mcp = FastMCP(
 # Health check endpoint
 @mcp.custom_route("/health", methods=["GET"])
 async def health_check(request: Request) -> Response:
-    return Response({'status': 'ok'}, media_type="application/json")
+    return Response('{"status": "ok"}', media_type="application/json")
 
 
 # Helper function to get config
