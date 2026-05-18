@@ -404,13 +404,13 @@ def update_product(
     description: Optional[dict] = None,
     published: Optional[bool] = None,
     free_shipping: Optional[bool] = None,
-    categories: Optional[list] = None,
+    categories: Optional[list[int]] = None,
     tags: Optional[str] = None,
     video_url: Optional[str] = None,
     seo_title: Optional[str] = None,
     seo_description: Optional[str] = None,
     brand: Optional[str] = None,
-    attributes: Optional[list] = None
+    attributes: Optional[list[dict]] = None
 ) -> dict:
     """
     Update an existing product.
@@ -1420,7 +1420,7 @@ def create_customer(
     phone: Optional[str] = None,
     identification: Optional[str] = None,
     note: Optional[str] = None,
-    addresses: Optional[list] = None,
+    addresses: Optional[list[dict]] = None,
     billing_address: Optional[str] = None,
     billing_number: Optional[str] = None,
     billing_floor: Optional[str] = None,
@@ -1537,7 +1537,7 @@ def update_customer(
     phone: Optional[str] = None,
     identification: Optional[str] = None,
     note: Optional[str] = None,
-    addresses: Optional[list] = None,
+    addresses: Optional[list[dict]] = None,
     billing_address: Optional[str] = None,
     billing_number: Optional[str] = None,
     billing_floor: Optional[str] = None,
