@@ -293,7 +293,7 @@ def create_product(
     name: dict,
     variants: list[dict],
     description: Optional[dict] = None,
-    images: Optional[list] = None,
+    images: Optional[list[dict]] = None,
     categories: Optional[list] = None,
     attributes: Optional[list] = None,
     published: bool = True,
