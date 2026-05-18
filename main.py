@@ -2505,7 +2505,8 @@ def main():
         if json_response:
             mcp.settings.json_response = True
             
-        mcp.run(transport="streamable-http", host=host, port=port)
+        import uvicorn
+        uvicorn.run(mcp.streamable_http_app(), host=host, port=port)
         
     else:
         print("📝 Running with stdio transport (for CLI usage)")
